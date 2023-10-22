@@ -21,5 +21,5 @@
   when: schema is defined
 
 
-- name: setup systemd service file
-  ansible.builtin.import_tasks: systemd-setup.yml
+- name: setup systemd.yml service file
+  ansible.builtin.import_tasks: systemd.yml-setup.yml
