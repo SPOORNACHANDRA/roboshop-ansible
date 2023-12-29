@@ -12,15 +12,15 @@
     name: redis.yml
     state: installed
 
-- name: update listen address /etc/redis.yml.conf
+- name: update listen address
   ansible.builtin.replace:
-    path: /etc/redis.yml.conf
+    path: /etc/redis.conf
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
-- name: update listen address /etc/redis.yml/redis.yml.conf
+- name: update listen address
   ansible.builtin.replace:
-    path: /etc/redis.yml/redis.yml.conf
+    path: /etc/redis/redis.conf
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
