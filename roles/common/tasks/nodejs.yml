@@ -1,5 +1,5 @@
 - name: nodejs repos
-  ansible.builtin.shell: curl -fsSL https://rpm.nodesource.com/nsolid_setup_rpm.sh | sh -s 20 | bash
+  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_18.x | bash
 
 - name: Install nodejs
   ansible.builtin.yum:
@@ -23,3 +23,5 @@
 
 - name: setup systemd.yml service file
   ansible.builtin.import_tasks: systemd-setup.yml
+
+
