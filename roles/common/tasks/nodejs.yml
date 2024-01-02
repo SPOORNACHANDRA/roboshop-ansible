@@ -1,5 +1,8 @@
-- name: nodejs repos
-  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
+- name: disable nodejs
+  ansible.builtin.shell: dnf module disable nodejs -y
+
+- name: enablenodejs
+  ansible.builtin.shell: dnf module enable nodejs:18 -y
 
 - name: Install nodejs
   ansible.builtin.yum:
