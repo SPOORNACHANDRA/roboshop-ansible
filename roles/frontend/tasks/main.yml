@@ -51,8 +51,13 @@
     src: nginx-exporter.service
     dest: /etc/systemd/system/nginx_exporter.service
 
-- name: restart nginx service
+- name: restart nginx prometheus exporter service
   ansible.builtin.systemd:
     name: nginx_exporter
     state: restarted
     enabled: yes
+
+- name: filebeat setup
+  ansible.builtin.import_role:
+    name: elk
+    tasks_from: filebeat
