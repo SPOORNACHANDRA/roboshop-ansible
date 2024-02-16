@@ -3,10 +3,15 @@
     name: nginx
     state: installed
 
-- name: copying the roboshop configuration
+- name: copying the roboshop configuration - project config
   ansible.builtin.copy:
     src: nginx-roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
+
+- name: copying the roboshop configuration - main config
+  ansible.builtin.copy:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
 
 - name: clean old content
   ansible.builtin.file:
