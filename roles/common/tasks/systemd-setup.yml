@@ -15,7 +15,7 @@
 - name: setup rsyslog config file
   ansible.builtin.template:
     src: "rsyslog.conf"
-    dest: /etc/rsyslog.log.d/roboshop.conf
+    dest: /etc/rsyslog.d/roboshop.conf
 
 - name: restart rsyslog service
   ansible.builtin.systemd:
